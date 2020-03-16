@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 
-
 import logging
 import queue
 from pyroute2 import IPDB, IPRoute
@@ -12,6 +11,17 @@ from time import sleep
 from pprint import pprint
 from subprocess import PIPE, check_output 
 import io
+
+# Debian/Ubuntu package dependancies
+# libgudev-1.0-0_232-2_amd64.deb
+# libjim0.76_0.76-2+b1_amd64.deb
+# libmbim-glib4_1.18.0-1_amd64.deb
+# libmbim-proxy_1.18.0-1_amd64.deb
+# libmbim-utils_1.18.0-1_amd64.deb
+# python3-pyroute2_0.5.2-1_all.deb
+# python3-serial_2.6-1.1_all.deb
+# python3-serial_3.4-4_all.deb
+# python3-serial-asyncio_0.4-1_all.deb
 
 logpath='/var/log'
 logfilename='ifupwwan'
