@@ -61,6 +61,27 @@ def connect():
     out('/sbin/ip link 2>&1 | /bin/grep wwan')
     ser.close()
 
+def disconnect():
+    log.info('Going to disconnect LTE modem on ttyUSB0')
+    ser = serial.Serial('/dev/ttyUSB0', 460800, timeout=1)
+    sio = io.TextIOWrapper(io.BufferedRWPair(ser, ser), encoding='ascii')
+
+    # ?? out('/sbin/dhclient -v -r wwan0 2>&1')
+
+    sio.write('AT^NDISDUP=1,0,\r\n')
+    sio.flush()
+    sleep(.1)
+    for line in sio:
+        log.info('After AT connect looking for OK')
+        line=line[:-1]
+        log.info(line)
+        if line == "OK":
+            log.info('Found OK going to break for loop')
+            break
+        sleep(.1)
+
+    ser.close()
+    
 class Worker(threading.Thread):
     def run(self):
         while True:
