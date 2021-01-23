@@ -22,6 +22,10 @@ import io
 # python3-serial_2.6-1.1_all.deb
 # python3-serial_3.4-4_all.deb
 # python3-serial-asyncio_0.4-1_all.deb
+# minicom
+
+# Inf accouting
+# iftop_1.0~pre4-6_amd64.deb
 
 logpath='/var/log'
 logfilename='ifupwwan'
