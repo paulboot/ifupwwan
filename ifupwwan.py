@@ -27,6 +27,9 @@ import io
 # Inf accouting
 # iftop_1.0~pre4-6_amd64.deb
 
+# Run with screen for debugging
+# screen -d -m -t ipmon -S ipmon /root/ifupwwan.py | tee /var/log/if-up.log
+
 logpath='/var/log'
 logfilename='ifupwwan'
 
